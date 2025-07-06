@@ -15,3 +15,17 @@ model = ChatHuggingFace(llm=llm)
 # Step 3: Invoke your prompt
 result = model.invoke("What is the capital of India?")
 print(result.content)
+
+if __name__ == "__main__":
+    # This is just to ensure the script runs when executed directly
+    print("Script executed successfully.")
+    if result.content:
+        print(f"Response: {result.content}")
+        if "New Delhi" in result.content:
+            print("The response is correct.")
+    else:
+        print("No response received.")
+    if not result.content:
+        print("The model did not return any content.")
+    else:
+        print("Model returned content successfully.")    
